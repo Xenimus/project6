@@ -1,0 +1,25 @@
+<head>
+  <link rel="stylesheet" type="public/css" href="css/style.css">
+</head>
+<div class="container">
+  <form>
+    <input name="month" type ="number" placeholder="Month" required>
+    <input name="year" type ="number" placeholder="Year" required>
+    <select name="country">
+      <option value="us" name="us">USA</option>
+      <option value="gb" name="gb">Great Britain</option>
+      <option value="br" name="br">Brazil</option>
+      <option value="be" name="be">Belgium</option>
+    </select>
+    <button type="submit">Submit!</button>
+  </form>
+  <table style="width:50%">
+  <th> Year </th><th> Month </th><th> Country </th>
+  <% @holidays.each do |day| %>
+    <tr>
+      <td><%= day[0]['name'] %></td>
+      <td><%= day[0]['date'] %></td>
+      <td><%= day[0]['country'] %></td>
+    </tr>
+  <% end %>
+</div>
