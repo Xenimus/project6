@@ -3,13 +3,13 @@
 </head>
 <div class="container">
   <form>
-    <input name="month" type ="number" placeholder="Month" required>
-    <input name="year" type ="number" placeholder="Year" required>
+    <input name="month" type ="number" value="<%= params[:month]%>" placeholder="Month">
+    <input name="year" type ="number" value="<%= params[:year]%>" placeholder="Year">
     <select name="country">
-      <option value="us" name="us">USA</option>
-      <option value="gb" name="gb">Great Britain</option>
-      <option value="br" name="br">Brazil</option>
-      <option value="be" name="be">Belgium</option>
+      <option value="us" <%= 'selected="selected"' if params[:country] == 'us'%> name="us">USA</option>
+      <option value="gb" <%= 'selected="selected"' if params[:country] == 'gb'%> name="gb">Great Britain</option>
+      <option value="br" <%= 'selected="selected"' if params[:country] == 'br'%> name="br">Brazil</option>
+      <option value="be" <%= 'selected="selected"' if params[:country] == 'be'%> name="be">Belgium</option>
     </select>
     <button type="submit">Submit!</button>
   </form>
